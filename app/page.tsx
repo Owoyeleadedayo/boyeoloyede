@@ -10,6 +10,7 @@ import Forge from "@/components/HomePage/Forge";
 import Tag from "@/components/HomePage/Tag";
 import Insight from "@/components/HomePage/Insight";
 import Expression from "@/components/HomePage/Expression";
+import Connect from "@/components/HomePage/Connect";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -113,6 +114,7 @@ export default function Home() {
       <Tag />
       <Insight />
       <Expression />
+      <Connect />
     </>
   );
 }

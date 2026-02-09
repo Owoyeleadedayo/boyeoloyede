@@ -1,5 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import { SquareArrowOutUpRight } from "lucide-react";
+import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 
 const Expression = () => {
@@ -66,12 +67,12 @@ const Expression = () => {
             />
           </div>
         </Card>
-        
+
         <Card className="flex flex-col bg-[#F8F3F1] mx-auto w-full max-w-sm rounded-md px-4 shadow-sm hover:shadow-lg transition-all duration-300 gap-2">
           <div className="flex flex-col gap-2">
             <p className="text-xl text-black font-medium">Sproutrs</p>
             <p className="text-base text-gray-500/90 font-normal">
-            Nurturing the next generation of leaders
+              Nurturing the next generation of leaders
             </p>
           </div>
           <div className="flex place-items-center gap-2">
@@ -90,7 +91,7 @@ const Expression = () => {
           <div className="flex flex-col gap-2">
             <p className="text-xl text-black font-medium">The Vantage Forge</p>
             <p className="text-base text-gray-500/90 font-normal">
-            A community for high-performing leaders
+              A community for high-performing leaders
             </p>
           </div>
           <div className="flex place-items-center gap-2">
@@ -104,6 +105,11 @@ const Expression = () => {
             />
           </div>
         </Card>
+      </motion.div>
+      <motion.div variants={fadeUp} className="flex place-items-center pt-5">
+        <Button className="bg-[#F8F3F1] border border-black/10 font-normal text-black text-sm md:text-base transition-all duration-300 ease-in-out hover:bg-transparent cursor-pointer">
+          View All Expressions
+        </Button>
       </motion.div>
     </motion.section>
   );
