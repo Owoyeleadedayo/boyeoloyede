@@ -1,9 +1,11 @@
+import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const sora = Sora({
+  variable: "--font-sora",
+  subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
@@ -20,8 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`$ antialiased`}
+        className={`${sora.className} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

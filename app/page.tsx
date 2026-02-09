@@ -1,65 +1,118 @@
+"use client";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+import KnownFor from "@/components/HomePage/KnownFor";
+import Forge from "@/components/HomePage/Forge";
+import Tag from "@/components/HomePage/Tag";
+import Insight from "@/components/HomePage/Insight";
+import Expression from "@/components/HomePage/Expression";
 
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <div className="flex flex-col lg:flex-row w-full h-full pt-30 justify-center items-center px-5 md:px-10 lg:px-20 bg-white gap-10">
+        <motion.div className="flex flex-col w-full lg:w-175 gap-3">
+          <motion.h1
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.1,
+              ease: [0.3, 1, 0.4, 1],
+            }}
+            className="text-black/90 font-bold text-5xl md:text-8xl "
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Clarity.
+          </motion.h1>
+          <motion.h2
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.1,
+              ease: [0.3, 1, 0.4, 1],
+            }}
+            className="text-black/90 font-bold text-5xl md:text-8xl "
           >
-            Documentation
-          </a>
+            Capacity.
+          </motion.h2>
+          <motion.h3
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.1,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="text-[#EB5752] font-bold text-5xl md:text-8xl "
+          >
+            Execution.
+          </motion.h3>
+          <motion.p
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.1,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="text-gray-700/80 text-base md:text-xl pl-1 md:pl-2"
+          >
+            I help high-performing leaders build strategic clarity, leadership
+            capacity, and execution systems that scale their impact without
+            burning them out.
+          </motion.p>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.1,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="flex gap-4 pl-0 md:pl-2"
+          >
+            <Button className="bg-[#EB5752] font-medium text-sm md:text-base hover:bg-[#EB5752]/90 transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer">
+              Connect with Boye <ArrowRight />
+            </Button>
+
+            <Button className="bg-transparent border border-black/90 font-medium text-black text-sm md:text-base transition-all duration-300 ease-in-out hover:bg-transparent hover:scale-105 cursor-pointer">
+              Explore Resources
+            </Button>
+          </motion.div>
+        </motion.div>
+        <div className="relative w-100 h-125 lg:w-112.5 lg:h-137.5">
+          {!isLoaded && (
+            <div className="absolute inset-0">
+              <Skeleton className="h-full w-full bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 animate-pulse" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Skeleton className="h-40 w-40 rounded-full" />
+              </div>
+            </div>
+          )}
+
+          <Image
+            src={"/img/boyeOImg.png"}
+            alt="Boye Oloyede"
+            fill
+            className={`fixed object-contain transition-opacity duration-500 ${
+              isLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            onLoad={() => setIsLoaded(true)}
+          />
         </div>
-      </main>
-    </div>
+      </div>
+      <KnownFor />
+      <Forge />
+      <Tag />
+      <Insight />
+      <Expression />
+    </>
   );
 }
