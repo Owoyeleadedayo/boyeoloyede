@@ -29,13 +29,13 @@ const Connect = () => {
         },
       }}
     >
-      <motion.div>
+      <motion.div variants={fadeUp}>
         <Card className="flex flex-col place-items-center bg-[#EB5752] mx-auto w-full max-w-5xl rounded-3xl px-5 shadow-sm hover:shadow-lg transition-all duration-300 gap-4">
           <Mic size={50} color="#FFF" />
-          <p className="text-white text-2xl font-semibold">
+          <p className="text-white text-xl md:text-3xl font-semibold">
             Ready to Lead with Clarity?
           </p>
-          <p className="text-xl font-normal text-center text-white max-w-2xl">Whether you need 1:1 coaching, speaking, or strategic advisory—let's start a conversation.</p>
+          <p className="text-base md:text-xl font-normal text-center text-white w-full md:max-w-2xl">Whether you need 1:1 coaching, speaking, or strategic advisory—let's start a conversation.</p>
           <div>
             <Button className="bg-[#FFF] border border-black/10 font-normal text-black text-sm md:text-base transition-all duration-300 ease-in-out capitalize hover:bg-white cursor-pointer">
               Connect with Boye <ArrowRight />
